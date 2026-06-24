@@ -1,0 +1,45 @@
+stages:
+  - test
+  - build
+  - scan
+
+variables:
+  NODE_VERSION: "20"
+
+cache:
+  paths:
+    - node_modules/
+
+lint:
+  stage: test
+  image: node:20
+  script:
+    - npm ci
+    - npm run build --dry-run || true
+  only:
+    - main
+    - merge_requests
+
+build:
+  stage: build
+  image: node:20
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - .next/
+    expire_in: 1 hour
+  only:
+    - main
+
+daily-scan:
+  stage: scan
+  image: node:20
+  script:
+    - npm ci
+    - node scripts/auto-scan.mjs
+  only:
+    - schedules
+  environment:
+    name: production
