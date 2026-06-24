@@ -10,16 +10,17 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.54.0",
     "next": "16.2.6",
+    "node-cron": "^3.0.3",
+    "playwright": "^1.61.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "node-cron": "^3.0.3"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^22",
+    "@types/node-cron": "^3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/node-cron": "^3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
