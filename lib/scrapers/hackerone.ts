@@ -44,6 +44,9 @@ export async function scrapeHackerOne(): Promise<Opportunity[]> {
       online: true,
       tags: ["security", "bug-bounty"],
       score: 0,
+      winRate: null,
+      participants: 0,
+      prizeSlots: 1,
       fetchedAt: new Date().toISOString(),
     }));
 }

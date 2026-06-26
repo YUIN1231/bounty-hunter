@@ -26,5 +26,8 @@ export interface Opportunity {
   online: boolean;
   tags: string[];
   score: number;             // 0-100, Claude が算出
+  winRate: number | null;    // % = prizeSlots / participants * 100
+  participants: number;
+  prizeSlots: number;
   fetchedAt: string;
 }

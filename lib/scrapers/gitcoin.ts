@@ -38,6 +38,9 @@ export async function scrapeGitcoin(): Promise<Opportunity[]> {
     online: true,
     tags: (b.keywords ?? "").split(",").map((k: string) => k.trim()).filter(Boolean),
     score: 0,
+    winRate: null,
+    participants: 0,
+    prizeSlots: 1,
     fetchedAt: new Date().toISOString(),
   }));
 }

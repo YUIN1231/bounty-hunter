@@ -9,6 +9,8 @@ interface DevpostItem {
   themes: { name: string }[];
   open_state: string;
   eligibility_requirement_to_participate: string;
+  registrations_count: number;
+  prizes: { title: string; amount: string }[];
 }
 
 export async function scrapeDevpost(): Promise<Opportunity[]> {
@@ -31,6 +33,12 @@ export async function scrapeDevpost(): Promise<Opportunity[]> {
     const solo =
       h.eligibility_requirement_to_participate?.toLowerCase().includes("individual") ?? null;
 
+    const participants = h.registrations_count ?? 0;
+    const prizeSlots = Math.max(1, (h.prizes ?? []).length);
+    const winRate = participants > 0
+      ? Math.min(100, Math.round((prizeSlots / participants) * 100))
+      : null;
+
     return {
       id: `devpost-${h.id}`,
       title: h.title,
@@ -44,6 +52,9 @@ export async function scrapeDevpost(): Promise<Opportunity[]> {
       online: true,
       tags: (h.themes ?? []).map((t) => t.name),
       score: 0,
+      winRate,
+      participants,
+      prizeSlots,
       fetchedAt: new Date().toISOString(),
     };
   });

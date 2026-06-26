@@ -37,6 +37,9 @@ export async function scrapeKaggle(): Promise<Opportunity[]> {
       online: true,
       tags: c.tags ?? [],
       score: 0,
+      winRate: null,
+      participants: 0,
+      prizeSlots: 1,
       fetchedAt: new Date().toISOString(),
     };
   });
