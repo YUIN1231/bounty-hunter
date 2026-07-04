@@ -1,0 +1,26 @@
+﻿{
+  "seen": {
+    "https://github.com/activepieces/activepieces/issues/8072": "2026-07-02T09:44:19.205Z",
+    "https://github.com/arakoodev/EdgeChains/issues/290": "2026-07-03T22:18:58.727Z",
+    "https://github.com/xevrion-v2/agent-playground/issues/2": "2026-07-03T22:18:58.773Z",
+    "https://github.com/xevrion-v2/agent-playground/issues/1": "2026-07-03T22:18:58.779Z",
+    "https://github.com/xevrion-v2/agent-playground/issues/17": "2026-07-03T23:30:07.159Z",
+    "https://github.com/UnsafeLabs/Bounty-Hunters/issues/820": "2026-07-02T09:45:55.002Z",
+    "https://github.com/UnsafeLabs/Bounty-Hunters/issues/842": "2026-07-03T22:27:45.736Z",
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-07-03T22:18:58.784Z",
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-03T22:18:58.789Z"
+  },
+  "submissions": [
+    {
+      "id": "https://github.com/activepieces/activepieces/issues/8072",
+      "title": "[MCP] Gmail",
+      "url": "https://github.com/activepieces/activepieces/issues/8072",
+      "budget": 200,
+      "score": 6,
+      "bid": "$200",
+      "proposalText": "PR submitted fixing Gmail actions auth/props pattern",
+      "draftedAt": "2026-07-02T09:44:19.205Z",
+      "status": "submitted"
+    }
+  ]
+}
