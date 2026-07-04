@@ -1,0 +1,44 @@
+﻿name: GitHub Bounty Scanner
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: scanner
+        run: npm install
+
+      - name: Configure git and gh CLI
+        run: |
+          echo "${{ secrets.GH_PAT }}" | gh auth login --with-token
+          git config --global user.name "YUIN1231"
+          git config --global user.email "yuin.yoshizawa@gmail.com"
+          git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
+
+      - name: Run bounty scanner
+        working-directory: scanner
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: node scanner.mjs
+
+      - name: Commit updated state
+        run: |
+          git add scanner/data/submissions.json
+          git diff --staged --quiet || (git commit -m "chore: scanner run $(date -u +%Y-%m-%dT%H:%M:%SZ)" && git push)
