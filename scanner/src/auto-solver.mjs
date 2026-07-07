@@ -6,7 +6,7 @@ import { execSync, spawnSync } from "child_process";
 import { mkdtempSync, writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
 import { join, extname } from "path";
 import { tmpdir } from "os";
-import { client } from "./claude-client.mjs";
+import { client, hasAI } from "./claude-client.mjs";
 import { CONFIG } from "./config.mjs";
 
 // Lazy: resolved on first use to avoid blocking module load if gh CLI has TLS issues

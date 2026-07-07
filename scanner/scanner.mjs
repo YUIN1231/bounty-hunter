@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 import { execSync } from "child_process";
 
 if (!process.env.GITHUB_TOKEN) {
@@ -7,6 +7,7 @@ if (!process.env.GITHUB_TOKEN) {
   } catch { /* gh not available */ }
 }
 
+import { hasAI } from "./src/claude-client.mjs";
 import { autoSolve } from "./src/auto-solver.mjs";
 import { scanGithubBounties } from "./src/platforms/github-bounty.mjs";
 import { filterJobs } from "./src/filter.mjs";
@@ -16,6 +17,7 @@ async function run() {
   const ts = new Date().toISOString();
   console.log(`\n${"=".repeat(42)}`);
   console.log(`  GITHUB BOUNTY HUNTER  [${ts}]`);
+  console.log(`  AI mode: ${hasAI ? "ON (Claude scoring)" : "OFF (keyword scoring)"}`);
   console.log(`${"=".repeat(42)}\n`);
 
   console.log("STEP 1: Scanning GitHub bounties...\n");
@@ -37,6 +39,15 @@ async function run() {
   console.log(`\n→ ${topJobs.length} actionable bounties:`);
   for (const j of topJobs) {
     console.log(`  $${j.budget} | score ${j.score}/10 | ${j.title.slice(0, 60)}`);
+  }
+
+  if (!hasAI) {
+    console.log("\nSTEP 3: Skipping auto-solve (no ANTHROPIC_API_KEY). Logging bounties only.");
+    for (const job of topJobs) {
+      recordDraft(job, { proposal: `[keyword-scan] ${job.title}`, bid: `$${job.budget}` });
+      console.log(`  📌 $${job.budget} | ${job.url}`);
+    }
+    return;
   }
 
   console.log("\nSTEP 3: Auto-solving...");

@@ -1,25 +1,27 @@
-import { client } from "./claude-client.mjs";
+import { client, hasAI } from "./claude-client.mjs";
 import { CONFIG } from "./config.mjs";
 
-// Fast keyword pre-filter for CrowdWorks — skip non-tech jobs before API call
-const CW_TECH_KW = [
-  "プログラム", "開発", "システム", "API", "アプリ", "ウェブ", "Web", "web",
-  "Python", "React", "JavaScript", "TypeScript", "Node", "Next", "Vue",
-  "AI", "LLM", "ChatGPT", "Claude", "機械学習", "スクレイピング",
-  "データベース", "SQL", "クラウド", "AWS", "GCP", "Firebase",
-  "フロントエンド", "バックエンド", "フルスタック", "自動化", "bot", "Bot",
+const TECH_KW = [
+  "javascript", "typescript", "node", "react", "next", "vue", "svelte",
+  "playwright", "automation", "api", "web", "frontend", "backend",
+  "llm", "ai", "openai", "anthropic", "claude", "chatgpt",
+  "fullstack", "full-stack", "prisma", "graphql", "rest",
+  "css", "html", "tailwind", "vite", "express", "fastify", "hono",
 ];
 
-function isCrowdWorksTech(job) {
-  const text = `${job.title} ${job.description ?? ""}`;
-  return CW_TECH_KW.some((kw) => text.includes(kw));
+function keywordScore(job) {
+  const text = `${job.title} ${job.description ?? ""}`.toLowerCase();
+  const hits = TECH_KW.filter((kw) => text.includes(kw)).length;
+  const budget = job.budget ?? 0;
+  let score = Math.min(hits * 1.5, 6);
+  if (budget >= 200) score += 2;
+  else if (budget >= 100) score += 1.5;
+  else if (budget >= 50) score += 1;
+  return { score: Math.round(Math.min(score, 9)), reason: `keyword-only (${hits} tech hits, $${budget})` };
 }
 
 export async function scoreJob(job) {
-  // Cheap pre-filter: skip obvious non-tech CrowdWorks jobs without API call
-  if (job.platform === "crowdworks" && !isCrowdWorksTech(job)) {
-    return { score: 1, reason: "non-tech job (pre-filter)" };
-  }
+  if (!hasAI) return keywordScore(job);
 
   const prompt = `Score this job 0-10 for this developer. Be concise.
 
@@ -68,7 +70,7 @@ export async function filterJobs(jobs, alreadySeen) {
   const newJobs = jobs.filter((j) => !alreadySeen.has(j.id));
   if (!newJobs.length) return [];
 
-  console.log(`\nScoring ${newJobs.length} jobs...`);
+  console.log(`\nScoring ${newJobs.length} jobs... (AI: ${hasAI ? "on" : "off - keyword mode"})`);
   const scored = [];
 
   for (const job of newJobs) {
@@ -76,12 +78,10 @@ export async function filterJobs(jobs, alreadySeen) {
     scored.push({ ...job, score, reason });
     const filled = Math.round(score);
     const bar = "█".repeat(filled) + "░".repeat(10 - filled);
-    const icon = job.platform === "crowdworks" ? "🟡" : job.platform === "github" ? "🟢" : "🔵";
+    const icon = job.platform === "github" ? "🟢" : "🔵";
     console.log(`  ${icon} [${bar}] ${score}/10 — ${job.title.slice(0, 45)} | ${reason}`);
   }
 
-  // GitHub bounties: threshold 7+ (avoid low-budget/fake repos)
-  // Other platforms: threshold 6+
   return scored
     .filter((j) => j.score >= (j.platform === "github" ? 7 : 6))
     .sort((a, b) => b.score - a.score)

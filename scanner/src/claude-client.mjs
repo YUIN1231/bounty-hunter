@@ -1,10 +1,11 @@
-﻿import Anthropic from "@anthropic-ai/sdk";
+import Anthropic from "@anthropic-ai/sdk";
 
 function createClient() {
   if (process.env.ANTHROPIC_API_KEY) {
     return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   }
-  throw new Error("Set ANTHROPIC_API_KEY environment variable.");
+  return null;
 }
 
 export const client = createClient();
+export const hasAI = client !== null;
