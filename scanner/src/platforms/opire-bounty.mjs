@@ -3,7 +3,6 @@
  * Public API: api.opire.dev/rewards?status=open — no auth required
  * Price unit: USD_CENT (divide by 100)
  */
-import { CONFIG } from "../config.mjs";
 
 const API = "https://api.opire.dev/rewards";
 const GH_API = "https://api.github.com";
@@ -16,10 +15,10 @@ function ghHeaders() {
 
 const BLOCKED_OWNERS = new Set([
   "UnsafeLabs", "SecureBananaLabs", "Scottcjn", "kickama-prize-lab", "xevrion-v2",
-  "rodrigompy", "alisteuber4ee1", "lb1192176991-lab", // known fake/spam Opire accounts
+  "rodrigompy", "alisteuber4ee1", "lb1192176991-lab",
 ]);
 
-async function getRepoStars(owner, repo) {
+async function getRepoInfo(owner, repo) {
   try {
     const res = await fetch(`${GH_API}/repos/${owner}/${repo}`, { headers: ghHeaders() });
     if (!res.ok) return { stars: 0, language: "" };
@@ -27,6 +26,17 @@ async function getRepoStars(owner, repo) {
     return { stars: d.stargazers_count ?? 0, language: d.language ?? "" };
   } catch {
     return { stars: 0, language: "" };
+  }
+}
+
+async function getIssueBody(owner, repo, issueNum) {
+  try {
+    const res = await fetch(`${GH_API}/repos/${owner}/${repo}/issues/${issueNum}`, { headers: ghHeaders() });
+    if (!res.ok) return "";
+    const d = await res.json();
+    return (d.body ?? "").slice(0, 800);
+  } catch {
+    return "";
   }
 }
 
@@ -44,13 +54,12 @@ export async function scanOpireBounties() {
   console.log("  [Opire] Fetching open rewards...");
 
   try {
-    // Fetch up to 3 pages (API caps at 30/page, ~90 total open bounties)
     for (const offset of [0, 30, 60]) {
       const items = await fetchPage(offset);
       if (!items.length) break;
 
       for (const r of items) {
-        if (results.has(r.url)) continue; // dedup
+        if (results.has(r.url)) continue;
 
         const amount = r.pendingPrice ? Math.round(r.pendingPrice.value / 100) : 0;
         if (amount < 20) continue;
@@ -67,12 +76,14 @@ export async function scanOpireBounties() {
 
         if (BLOCKED_OWNERS.has(owner)) continue;
 
-        const { stars, language } = await getRepoStars(owner, repo);
-        if (stars < 50) continue; // skip tiny/fake repos
+        const { stars, language } = await getRepoInfo(owner, repo);
+        if (stars < 50) continue;
 
-        // Skip non-JS/TS repos (unless Opire reported a language)
         const lang = language.toLowerCase();
         if (langs.length === 0 && ["php","ruby","go","rust","swift","kotlin","java","c++","c#","python"].includes(lang)) continue;
+
+        // Fetch issue body for proper scoring
+        const description = await getIssueBody(owner, repo, issueNum);
 
         results.set(r.url, {
           id: r.url,
@@ -80,7 +91,7 @@ export async function scanOpireBounties() {
           title: r.title,
           url: r.url,
           repoUrl: `https://github.com/${owner}/${repo}`,
-          description: "",
+          description,
           budget: amount,
           budgetText: `$${amount}`,
           skills: langs,
@@ -91,7 +102,7 @@ export async function scanOpireBounties() {
           postedAt: r.createdAt ? new Date(r.createdAt).toISOString() : undefined,
         });
 
-        await new Promise((r) => setTimeout(r, 150));
+        await new Promise((r) => setTimeout(r, 200));
       }
 
       console.log(`    [Opire] offset=${offset} → ${results.size} bounties so far`);
