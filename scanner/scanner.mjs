@@ -10,6 +10,7 @@ if (!process.env.GITHUB_TOKEN) {
 import { hasAI } from "./src/claude-client.mjs";
 import { autoSolve } from "./src/auto-solver.mjs";
 import { scanGithubBounties } from "./src/platforms/github-bounty.mjs";
+import { scanOpireBounties } from "./src/platforms/opire-bounty.mjs";
 import { filterJobs } from "./src/filter.mjs";
 import { getSeenIds, markSeen, recordSubmission, recordDraft } from "./src/tracker.mjs";
 
@@ -20,9 +21,19 @@ async function run() {
   console.log(`  AI mode: ${hasAI ? "ON (Claude scoring)" : "OFF (keyword scoring)"}`);
   console.log(`${"=".repeat(42)}\n`);
 
-  console.log("STEP 1: Scanning GitHub bounties...\n");
-  const jobs = await scanGithubBounties();
-  console.log(`  Found: ${jobs.length} bounties\n`);
+  console.log("STEP 1: Scanning bounties...\n");
+  const [ghJobs, opireJobs] = await Promise.all([
+    scanGithubBounties().catch(e => { console.warn("GitHub scan error:", e.message); return []; }),
+    scanOpireBounties().catch(e => { console.warn("Opire scan error:", e.message); return []; }),
+  ]);
+
+  // Merge and deduplicate by URL
+  const seen = new Map();
+  for (const j of [...ghJobs, ...opireJobs]) {
+    if (!seen.has(j.id)) seen.set(j.id, j);
+  }
+  const jobs = [...seen.values()];
+  console.log(`\n  Found: ${jobs.length} total (${ghJobs.length} GitHub, ${opireJobs.length} Opire)\n`);
 
   const seenIds = getSeenIds();
   const newJobs = jobs.filter((j) => !seenIds.has(j.id));
@@ -38,7 +49,7 @@ async function run() {
 
   console.log(`\n→ ${topJobs.length} actionable bounties:`);
   for (const j of topJobs) {
-    console.log(`  $${j.budget} | score ${j.score}/10 | ${j.title.slice(0, 60)}`);
+    console.log(`  [${j.source}] $${j.budget} | score ${j.score}/10 | ${j.title.slice(0, 60)}`);
   }
 
   if (!hasAI) {
