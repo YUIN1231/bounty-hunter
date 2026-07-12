@@ -1,23 +1,43 @@
 import { client, hasAI } from "./claude-client.mjs";
 import { CONFIG } from "./config.mjs";
 
-const TECH_KW = [
+const TECH_KW = new Set([
   "javascript", "typescript", "node", "react", "next", "vue", "svelte",
   "playwright", "automation", "api", "web", "frontend", "backend",
   "llm", "ai", "openai", "anthropic", "claude", "chatgpt",
   "fullstack", "full-stack", "prisma", "graphql", "rest",
   "css", "html", "tailwind", "vite", "express", "fastify", "hono",
-];
+  // DB / ORM / schema patterns common in TypeScript repos
+  "migration", "orm", "schema", "column", "query", "database", "table",
+  "typeorm", "drizzle", "sequelize", "mongoose", "knex",
+  // UI / component patterns
+  "storybook", "component", "control", "select", "input", "form",
+  "ui", "ux", "design", "button", "modal", "dialog",
+  // General engineering patterns
+  "bug", "fix", "feature", "error", "issue", "performance", "test",
+]);
 
 function keywordScore(job) {
   const text = `${job.title} ${job.description ?? ""}`.toLowerCase();
-  const hits = TECH_KW.filter((kw) => text.includes(kw)).length;
+  const hits = [...TECH_KW].filter((kw) => text.includes(kw)).length;
   const budget = job.budget ?? 0;
-  let score = Math.min(hits * 1.5, 6);
-  if (budget >= 200) score += 2;
+
+  let score = Math.min(hits * 1.2, 5);
+
+  if (budget >= 500) score += 3;
+  else if (budget >= 200) score += 2;
   else if (budget >= 100) score += 1.5;
-  else if (budget >= 50) score += 1;
-  return { score: Math.round(Math.min(score, 9)), reason: `keyword-only (${hits} tech hits, $${budget})` };
+  else if (budget >= 50)  score += 1;
+
+  // Verified bounty platform bonus
+  if (job.source === "opire" || job.source === "algora" || job.source === "algora-api") {
+    score += 1.5;
+  }
+
+  return {
+    score: Math.round(Math.min(score, 10)),
+    reason: `keyword-only (${hits} hits, $${budget}, src:${job.source ?? "gh"})`,
+  };
 }
 
 export async function scoreJob(job) {
@@ -32,6 +52,7 @@ Job (${job.platform}):
 Title: ${job.title}
 Budget: ${job.budgetText || `$${job.budget || "?"}`}
 Skills: ${job.skills?.join(", ") || "not listed"}
+Source: ${job.source ?? "github"}
 Description: ${(job.description || "").slice(0, 300)}
 
 Scoring:
