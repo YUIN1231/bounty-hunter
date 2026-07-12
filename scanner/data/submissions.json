@@ -1,1 +1,56 @@
-{"seen":{},"submissions":[]}
+{
+  "seen": {
+    "https://github.com/hexgrad/kokoro/issues/290": "2026-07-12T00:04:31.782Z",
+    "https://github.com/typeorm/typeorm/issues/3357": "2026-07-12T00:04:31.782Z",
+    "https://github.com/typeorm/typeorm/issues/12578": "2026-07-12T00:04:31.782Z",
+    "https://github.com/storybookjs/storybook/issues/12641": "2026-07-12T00:04:31.782Z",
+    "https://github.com/trovu/trovu/issues/329": "2026-07-12T00:04:31.781Z",
+    "https://github.com/bogeeee/restfuncs/issues/6": "2026-07-12T00:04:31.781Z"
+  },
+  "submissions": [
+    {
+      "id": "https://github.com/typeorm/typeorm/issues/3357",
+      "title": "Migration generation drops and creates columns instead of altering resulting in data loss",
+      "url": "https://github.com/typeorm/typeorm/issues/3357",
+      "budget": 590,
+      "score": 10,
+      "bid": "$590",
+      "proposalText": "[keyword-scan] Migration generation drops and creates columns instead of altering resulting in data loss",
+      "draftedAt": "2026-07-12T00:04:31.782Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/typeorm/typeorm/issues/12578",
+      "title": "OrmUtils.normalizeWhereCriteria() does not implement described default behaviour for invalidWhereValuesBehavior",
+      "url": "https://github.com/typeorm/typeorm/issues/12578",
+      "budget": 300,
+      "score": 9,
+      "bid": "$300",
+      "proposalText": "[keyword-scan] OrmUtils.normalizeWhereCriteria() does not implement described default behaviour for invalidWhereValuesBehavior",
+      "draftedAt": "2026-07-12T00:04:31.782Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/storybookjs/storybook/issues/12641",
+      "title": "Problem with storybook-controls of type \"select\"",
+      "url": "https://github.com/storybookjs/storybook/issues/12641",
+      "budget": 263,
+      "score": 9,
+      "bid": "$263",
+      "proposalText": "[keyword-scan] Problem with storybook-controls of type \"select\"",
+      "draftedAt": "2026-07-12T00:04:31.782Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/hexgrad/kokoro/issues/290",
+      "title": "Donation/funding for german language",
+      "url": "https://github.com/hexgrad/kokoro/issues/290",
+      "budget": 1660,
+      "score": 8,
+      "bid": "$1660",
+      "proposalText": "[keyword-scan] Donation/funding for german language",
+      "draftedAt": "2026-07-12T00:04:31.782Z",
+      "status": "draft"
+    }
+  ]
+}
