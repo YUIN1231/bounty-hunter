@@ -1,1 +1,21 @@
-{"seen":{},"submissions":[]}
+{
+  "seen": {
+    "https://github.com/activepieces/activepieces/issues/8072": "2026-07-12T00:01:45.568Z",
+    "https://github.com/jhipster/generator-jhipster/issues/21466": "2026-07-12T00:01:45.569Z",
+    "https://github.com/jhipster/jhipster-registry/issues/320": "2026-07-12T00:01:45.569Z",
+    "https://github.com/arakoodev/EdgeChains/issues/290": "2026-07-12T00:01:45.569Z",
+    "https://github.com/jhipster/jhipster-vuejs/issues/482": "2026-07-12T00:01:45.569Z",
+    "https://github.com/jhipster/jhipster-vuejs/issues/431": "2026-07-12T00:01:45.570Z",
+    "https://github.com/jhipster/generator-jhipster-svelte/issues/1650": "2026-07-12T00:01:45.570Z",
+    "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-07-12T00:01:45.570Z",
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-07-12T00:01:45.570Z",
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-12T00:01:45.570Z",
+    "https://github.com/hexgrad/kokoro/issues/290": "2026-07-12T00:01:45.571Z",
+    "https://github.com/typeorm/typeorm/issues/3357": "2026-07-12T00:01:45.571Z",
+    "https://github.com/typeorm/typeorm/issues/12578": "2026-07-12T00:01:45.571Z",
+    "https://github.com/storybookjs/storybook/issues/12641": "2026-07-12T00:01:45.571Z",
+    "https://github.com/trovu/trovu/issues/329": "2026-07-12T00:01:45.571Z",
+    "https://github.com/bogeeee/restfuncs/issues/6": "2026-07-12T00:01:45.571Z"
+  },
+  "submissions": []
+}
