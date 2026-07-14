@@ -15,7 +15,8 @@
     "https://github.com/jhipster/generator-jhipster-svelte/issues/1650": "2026-07-12T13:37:40.602Z",
     "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-07-12T13:37:40.602Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-07-12T13:37:40.603Z",
-    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-12T13:37:40.603Z"
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-12T13:37:40.603Z",
+    "https://github.com/jhipster/generator-jhipster/issues/33989": "2026-07-14T13:54:31.782Z"
   },
   "submissions": [
     {
@@ -104,6 +105,17 @@
       "bid": "$100",
       "proposalText": "[keyword-scan] Sonar analyze: component, update, details not covered",
       "draftedAt": "2026-07-12T13:37:40.604Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/jhipster/generator-jhipster/issues/33989",
+      "title": "Update Angular to v22",
+      "url": "https://github.com/jhipster/generator-jhipster/issues/33989",
+      "budget": 500,
+      "score": 8,
+      "bid": "$500",
+      "proposalText": "[keyword-scan] Update Angular to v22",
+      "draftedAt": "2026-07-14T13:54:31.782Z",
       "status": "draft"
     }
   ]
