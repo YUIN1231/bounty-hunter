@@ -16,7 +16,8 @@
     "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-07-12T13:37:40.602Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-07-12T13:37:40.603Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-12T13:37:40.603Z",
-    "https://github.com/jhipster/generator-jhipster/issues/33989": "2026-07-14T13:54:31.782Z"
+    "https://github.com/jhipster/generator-jhipster/issues/33989": "2026-07-14T13:54:31.782Z",
+    "https://github.com/jhipster/generator-jhipster/issues/34091": "2026-07-15T08:22:53.908Z"
   },
   "submissions": [
     {
@@ -116,6 +117,17 @@
       "bid": "$500",
       "proposalText": "[keyword-scan] Update Angular to v22",
       "draftedAt": "2026-07-14T13:54:31.782Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/jhipster/generator-jhipster/issues/34091",
+      "title": "JHipster 9.2.0: prettier: Unexpected errors on build",
+      "url": "https://github.com/jhipster/generator-jhipster/issues/34091",
+      "budget": 100,
+      "score": 7,
+      "bid": "$100",
+      "proposalText": "[keyword-scan] JHipster 9.2.0: prettier: Unexpected errors on build",
+      "draftedAt": "2026-07-15T08:22:53.908Z",
       "status": "draft"
     }
   ]
