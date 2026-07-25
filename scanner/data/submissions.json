@@ -29,7 +29,8 @@
       "bid": "$590",
       "proposalText": "[keyword-scan] Migration generation drops and creates columns instead of altering resulting in data loss",
       "draftedAt": "2026-07-12T00:04:31.782Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "SKIP for now: 96 comments, open since driver-level architecture debate, multiple prior failed attempts. Not a quick win despite high score."
     },
     {
       "id": "https://github.com/typeorm/typeorm/issues/12578",
@@ -38,9 +39,14 @@
       "budget": 300,
       "score": 9,
       "bid": "$300",
-      "proposalText": "[keyword-scan] OrmUtils.normalizeWhereCriteria() does not implement described default behaviour for invalidWhereValuesBehavior",
+      "proposalText": "Verified the bug: OrmUtils.normalizeWhereCriteria() returns criteria unchanged when no options object is passed, so the documented default (\"throw\" on undefined) never fires — UPDATE/DELETE queries silently run with undefined-as-null WHERE clauses instead of raising a TypeORMError. I'd fix this by giving the options parameter a default of { null: \"ignore\", undefined: \"throw\" } to match the documented default-1 behavior, add a regression test asserting the throw when undefined is passed with no explicit invalidWhereValuesBehavior, and verify no existing tests relied on the silent-pass behavior. I can have a PR up within a few days — happy to start now if this is still open.",
       "draftedAt": "2026-07-12T00:04:31.782Z",
-      "status": "draft"
+      "status": "ready_to_claim",
+      "plan": {
+        "canSolve": "probably",
+        "hours": 4,
+        "firstStep": "Clone typeorm, reproduce with the linked repro repo (samkessaram/typeorm-undefined-where-bug), read src/util/OrmUtils.ts around normalizeWhereCriteria"
+      }
     },
     {
       "id": "https://github.com/storybookjs/storybook/issues/12641",
@@ -51,7 +57,8 @@
       "bid": "$263",
       "proposalText": "[keyword-scan] Problem with storybook-controls of type \"select\"",
       "draftedAt": "2026-07-12T00:04:31.782Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "Not yet triaged against real issue body/comments — needs a read-the-actual-issue pass before proposing."
     },
     {
       "id": "https://github.com/hexgrad/kokoro/issues/290",
@@ -62,7 +69,8 @@
       "bid": "$1660",
       "proposalText": "[keyword-scan] Donation/funding for german language",
       "draftedAt": "2026-07-12T00:04:31.782Z",
-      "status": "draft"
+      "status": "invalid",
+      "triageNote": "Not a real code bounty. Issue body is a request for OTHERS to fund/donate via an Opire funding pool for German TTS support — the $1660 figure is a funding target, not a payout for completed work. Mis-scraped by the keyword scanner. Exclude from pipeline."
     },
     {
       "id": "https://github.com/activepieces/activepieces/issues/8072",
@@ -73,7 +81,8 @@
       "bid": "$200",
       "proposalText": "[keyword-scan] [MCP] Gmail",
       "draftedAt": "2026-07-12T13:37:40.603Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "Not yet triaged against real issue body/comments."
     },
     {
       "id": "https://github.com/jhipster/generator-jhipster/issues/21466",
@@ -84,7 +93,8 @@
       "bid": "$200",
       "proposalText": "[keyword-scan] Switch cassandra to liquibase.",
       "draftedAt": "2026-07-12T13:37:40.603Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "Not yet triaged against real issue body/comments."
     },
     {
       "id": "https://github.com/jhipster/jhipster-vuejs/issues/482",
@@ -95,7 +105,8 @@
       "bid": "$100",
       "proposalText": "[keyword-scan] Map all dates from server in HTTP services",
       "draftedAt": "2026-07-12T13:37:40.604Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "Not yet triaged against real issue body/comments."
     },
     {
       "id": "https://github.com/jhipster/jhipster-vuejs/issues/431",
@@ -106,7 +117,8 @@
       "bid": "$100",
       "proposalText": "[keyword-scan] Sonar analyze: component, update, details not covered",
       "draftedAt": "2026-07-12T13:37:40.604Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "Not yet triaged against real issue body/comments."
     },
     {
       "id": "https://github.com/jhipster/generator-jhipster/issues/33989",
@@ -115,9 +127,14 @@
       "budget": 500,
       "score": 8,
       "bid": "$500",
-      "proposalText": "[keyword-scan] Update Angular to v22",
+      "proposalText": "Confirmed this carries the official \"$$ bug-bounty $$ / $500\" label. Scope per the issue is the Angular v22 bump across the generator's Angular blueprint (templates, package.json version pins, microfrontend/module-federation config is called out as the hard part). I'd start by bumping the non-microfrontend path first (get a plain Angular v22 app generating and passing the existing Angular e2e/sample-app tests), then tackle microfrontend config separately since that's flagged as the risky part. Estimate ~2-3 days given the microfrontend piece. I can claim this and start today if it's still unassigned.",
       "draftedAt": "2026-07-14T13:54:31.782Z",
-      "status": "draft"
+      "status": "ready_to_claim",
+      "plan": {
+        "canSolve": "probably",
+        "hours": 18,
+        "firstStep": "Check if issue is still unassigned, fork generator-jhipster, find the Angular blueprint templates directory, diff current Angular version pins against v22 breaking changes"
+      }
     },
     {
       "id": "https://github.com/jhipster/generator-jhipster/issues/34091",
@@ -128,7 +145,8 @@
       "bid": "$100",
       "proposalText": "[keyword-scan] JHipster 9.2.0: prettier: Unexpected errors on build",
       "draftedAt": "2026-07-15T08:22:53.908Z",
-      "status": "draft"
+      "status": "draft",
+      "triageNote": "Not yet triaged against real issue body/comments."
     }
   ]
 }
