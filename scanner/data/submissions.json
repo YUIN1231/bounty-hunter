@@ -17,7 +17,8 @@
     "https://github.com/jhipster/generator-jhipster-svelte/issues/1650": "2026-07-26T20:04:21.528Z",
     "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-07-26T20:04:21.529Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-07-26T20:04:21.529Z",
-    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-26T20:04:21.529Z"
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-07-26T20:04:21.529Z",
+    "https://github.com/jhipster/generator-jhipster/issues/34173": "2026-07-29T22:46:45.606Z"
   },
   "submissions": [
     {
@@ -147,6 +148,17 @@
       "draftedAt": "2026-07-15T08:22:53.908Z",
       "status": "draft",
       "triageNote": "Not yet triaged against real issue body/comments."
+    },
+    {
+      "id": "https://github.com/jhipster/generator-jhipster/issues/34173",
+      "title": "Update Spring Boot to 4.1.0",
+      "url": "https://github.com/jhipster/generator-jhipster/issues/34173",
+      "budget": 500,
+      "score": 8,
+      "bid": "$500",
+      "proposalText": "[keyword-scan] Update Spring Boot to 4.1.0",
+      "draftedAt": "2026-07-29T22:46:45.606Z",
+      "status": "draft"
     }
   ]
 }
