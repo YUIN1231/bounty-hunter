@@ -18,7 +18,8 @@
     "https://github.com/jhipster/generator-jhipster-svelte/issues/1650": "2026-08-02T22:45:00.783Z",
     "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-08-02T22:45:00.784Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-08-02T22:45:00.784Z",
-    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-08-02T22:45:00.785Z"
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/131": "2026-08-02T22:45:00.785Z",
+    "https://github.com/strapi/strapi/issues/11998": "2026-08-06T15:06:29.847Z"
   },
   "submissions": [
     {
@@ -158,6 +159,17 @@
       "bid": "$500",
       "proposalText": "[keyword-scan] Update Spring Boot to 4.1.0",
       "draftedAt": "2026-07-29T22:46:45.606Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/strapi/strapi/issues/11998",
+      "title": "[V4] QueryEngine - deleteMany not working when filter by nested entity.",
+      "url": "https://github.com/strapi/strapi/issues/11998",
+      "budget": 70,
+      "score": 8,
+      "bid": "$70",
+      "proposalText": "[keyword-scan] [V4] QueryEngine - deleteMany not working when filter by nested entity.",
+      "draftedAt": "2026-08-06T15:06:29.847Z",
       "status": "draft"
     }
   ]
