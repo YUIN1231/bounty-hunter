@@ -18,7 +18,8 @@
     "https://github.com/arakoodev/EdgeChains/issues/290": "2026-08-09T23:20:28.119Z",
     "https://github.com/jhipster/generator-jhipster-svelte/issues/1650": "2026-08-09T23:20:28.120Z",
     "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-08-09T23:20:28.120Z",
-    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-08-09T23:20:28.120Z"
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-08-09T23:20:28.120Z",
+    "https://github.com/Ikalus1988/MisakaNet/issues/932": "2026-08-12T19:55:59.726Z"
   },
   "submissions": [
     {
@@ -169,6 +170,17 @@
       "bid": "$70",
       "proposalText": "[keyword-scan] [V4] QueryEngine - deleteMany not working when filter by nested entity.",
       "draftedAt": "2026-08-06T15:06:29.847Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/Ikalus1988/MisakaNet/issues/932",
+      "title": "[Test] Windows Voice hook verification",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/932",
+      "budget": 1500,
+      "score": 9,
+      "bid": "$1500",
+      "proposalText": "[keyword-scan] [Test] Windows Voice hook verification",
+      "draftedAt": "2026-08-12T19:55:59.726Z",
       "status": "draft"
     }
   ]
