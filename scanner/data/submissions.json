@@ -18,7 +18,8 @@
     "https://github.com/jhipster/generator-jhipster-svelte/issues/1650": "2026-08-24T12:24:07.971Z",
     "https://github.com/jhipster/generator-jhipster-svelte/issues/525": "2026-08-24T12:24:07.971Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-08-24T12:24:07.972Z",
-    "https://github.com/auscaster/frantic-board/issues/388": "2026-08-27T13:15:48.443Z"
+    "https://github.com/auscaster/frantic-board/issues/388": "2026-08-27T13:15:48.443Z",
+    "https://github.com/jhipster/generator-jhipster/issues/34718": "2026-08-30T20:12:19.911Z"
   },
   "submissions": [
     {
@@ -180,6 +181,17 @@
       "bid": "$1500",
       "proposalText": "[keyword-scan] [Test] Windows Voice hook verification",
       "draftedAt": "2026-08-12T19:55:59.726Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/jhipster/generator-jhipster/issues/34718",
+      "title": "Release JHipster 9.3.0",
+      "url": "https://github.com/jhipster/generator-jhipster/issues/34718",
+      "budget": 500,
+      "score": 8,
+      "bid": "$500",
+      "proposalText": "[keyword-scan] Release JHipster 9.3.0",
+      "draftedAt": "2026-08-30T20:12:19.911Z",
       "status": "draft"
     }
   ]
