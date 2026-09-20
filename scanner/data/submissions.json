@@ -17,7 +17,8 @@
     "https://github.com/arakoodev/EdgeChains/issues/290": "2026-09-15T06:54:33.344Z",
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-09-15T06:54:33.345Z",
     "https://github.com/jhipster/jhipster-registry/issues/320": "2026-09-16T17:49:29.988Z",
-    "https://github.com/trovu/trovu/issues/329": "2026-09-17T17:49:12.116Z"
+    "https://github.com/trovu/trovu/issues/329": "2026-09-17T17:49:12.116Z",
+    "https://github.com/formbricks/formbricks/issues/3302": "2026-09-20T07:59:23.618Z"
   },
   "submissions": [
     {
@@ -190,6 +191,17 @@
       "bid": "$500",
       "proposalText": "[keyword-scan] Release JHipster 9.3.0",
       "draftedAt": "2026-08-30T20:12:19.911Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/formbricks/formbricks/issues/3302",
+      "title": "[BUG] Internal Server Errors still shows success toast",
+      "url": "https://github.com/formbricks/formbricks/issues/3302",
+      "budget": 110,
+      "score": 8,
+      "bid": "$110",
+      "proposalText": "[keyword-scan] [BUG] Internal Server Errors still shows success toast",
+      "draftedAt": "2026-09-20T07:59:23.618Z",
       "status": "draft"
     }
   ]
