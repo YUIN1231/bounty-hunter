@@ -16,7 +16,11 @@
     "https://github.com/jhipster/generator-jhipster/issues/34718": "2026-08-30T20:12:19.911Z",
     "https://github.com/formbricks/formbricks/issues/3302": "2026-09-20T07:59:23.618Z",
     "https://github.com/jhipster/jhipster-registry/issues/320": "2026-09-23T18:04:24.648Z",
-    "https://github.com/trovu/trovu/issues/329": "2026-09-24T19:35:42.190Z"
+    "https://github.com/trovu/trovu/issues/329": "2026-09-24T19:35:42.190Z",
+    "https://github.com/tenstorrent/tt-metal/issues/58228": "2026-09-29T18:59:37.268Z",
+    "https://github.com/tenstorrent/tt-metal/issues/58227": "2026-09-29T18:59:37.269Z",
+    "https://github.com/arakoodev/EdgeChains/issues/290": "2026-09-29T18:59:37.268Z",
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-09-29T18:59:37.268Z"
   },
   "submissions": [
     {
@@ -200,6 +204,28 @@
       "bid": "$110",
       "proposalText": "[keyword-scan] [BUG] Internal Server Errors still shows success toast",
       "draftedAt": "2026-09-20T07:59:23.618Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/tenstorrent/tt-metal/issues/58228",
+      "title": "[Bounty $1.5k] Improve div_no_nan accuracy to 1 ULP",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/58228",
+      "budget": 1500,
+      "score": 8,
+      "bid": "$1500",
+      "proposalText": "[keyword-scan] [Bounty $1.5k] Improve div_no_nan accuracy to 1 ULP",
+      "draftedAt": "2026-09-29T18:59:37.268Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/tenstorrent/tt-metal/issues/58227",
+      "title": "[Bounty $1.5k] Improve BF16 reciprocal rounding on Wormhole",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/58227",
+      "budget": 1500,
+      "score": 8,
+      "bid": "$1500",
+      "proposalText": "[keyword-scan] [Bounty $1.5k] Improve BF16 reciprocal rounding on Wormhole",
+      "draftedAt": "2026-09-29T18:59:37.269Z",
       "status": "draft"
     }
   ]
