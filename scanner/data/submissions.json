@@ -21,7 +21,8 @@
     "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-09-29T18:59:37.268Z",
     "https://github.com/tenstorrent/tt-metal/issues/58495": "2026-09-30T07:39:19.794Z",
     "https://github.com/jhipster/jhipster-registry/issues/320": "2026-09-30T19:44:14.617Z",
-    "https://github.com/trovu/trovu/issues/329": "2026-10-01T21:29:45.040Z"
+    "https://github.com/trovu/trovu/issues/329": "2026-10-01T21:29:45.040Z",
+    "https://github.com/tenstorrent/tt-metal/issues/58986": "2026-10-02T19:39:09.587Z"
   },
   "submissions": [
     {
@@ -238,6 +239,17 @@
       "bid": "$750",
       "proposalText": "[keyword-scan] [Bounty $750] Fix fused scale-mask softmax tile-padding leakage at non-32 widths",
       "draftedAt": "2026-09-30T07:39:19.794Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/tenstorrent/tt-metal/issues/58986",
+      "title": "[Bounty $1,000] FP32 ttnn.cumsum returns NaN after infinity or overflow",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/58986",
+      "budget": 1000,
+      "score": 8,
+      "bid": "$1000",
+      "proposalText": "[keyword-scan] [Bounty $1,000] FP32 ttnn.cumsum returns NaN after infinity or overflow",
+      "draftedAt": "2026-10-02T19:39:09.587Z",
       "status": "draft"
     }
   ]
