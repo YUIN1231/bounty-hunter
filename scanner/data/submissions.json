@@ -20,7 +20,9 @@
     "https://github.com/tenstorrent/tt-metal/issues/58495": "2026-09-30T07:39:19.794Z",
     "https://github.com/trovu/trovu/issues/329": "2026-10-01T21:29:45.040Z",
     "https://github.com/tenstorrent/tt-metal/issues/58986": "2026-10-02T19:39:09.587Z",
-    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-10-07T17:36:17.297Z"
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-10-07T17:36:17.297Z",
+    "https://github.com/tenstorrent/tt-metal/issues/59732": "2026-10-08T02:21:56.457Z",
+    "https://github.com/jhipster/jhipster-registry/issues/320": "2026-10-08T02:21:56.456Z"
   },
   "submissions": [
     {
@@ -248,6 +250,17 @@
       "bid": "$1000",
       "proposalText": "[keyword-scan] [Bounty $1,000] FP32 ttnn.cumsum returns NaN after infinity or overflow",
       "draftedAt": "2026-10-02T19:39:09.587Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/tenstorrent/tt-metal/issues/59732",
+      "title": "[Bounty $3,000] Fix ttnn.sampling distribution bias from low-precision random threshold",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/59732",
+      "budget": 3000,
+      "score": 8,
+      "bid": "$3000",
+      "proposalText": "[keyword-scan] [Bounty $3,000] Fix ttnn.sampling distribution bias from low-precision random threshold",
+      "draftedAt": "2026-10-08T02:21:56.457Z",
       "status": "draft"
     }
   ]
