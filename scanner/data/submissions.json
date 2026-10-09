@@ -23,7 +23,8 @@
     "https://github.com/tenstorrent/tt-metal/issues/59732": "2026-10-08T02:21:56.457Z",
     "https://github.com/jhipster/jhipster-registry/issues/320": "2026-10-08T02:21:56.456Z",
     "https://github.com/arakoodev/EdgeChains/issues/290": "2026-10-08T22:36:35.312Z",
-    "https://github.com/trovu/trovu/issues/329": "2026-10-08T22:36:35.313Z"
+    "https://github.com/trovu/trovu/issues/329": "2026-10-08T22:36:35.313Z",
+    "https://github.com/jhipster/generator-jhipster-nodejs/issues/1408": "2026-10-09T21:23:36.113Z"
   },
   "submissions": [
     {
@@ -262,6 +263,17 @@
       "bid": "$3000",
       "proposalText": "[keyword-scan] [Bounty $3,000] Fix ttnn.sampling distribution bias from low-precision random threshold",
       "draftedAt": "2026-10-08T02:21:56.457Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/jhipster/generator-jhipster-nodejs/issues/1408",
+      "title": "Modernize the NestJS codebase",
+      "url": "https://github.com/jhipster/generator-jhipster-nodejs/issues/1408",
+      "budget": 500,
+      "score": 8,
+      "bid": "$500",
+      "proposalText": "[keyword-scan] Modernize the NestJS codebase",
+      "draftedAt": "2026-10-09T21:23:36.113Z",
       "status": "draft"
     }
   ]
