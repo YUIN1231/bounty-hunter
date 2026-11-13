@@ -23,7 +23,9 @@
     "https://github.com/jhipster/generator-jhipster-nodejs/issues/1408": "2026-10-09T21:23:36.113Z",
     "https://github.com/tenstorrent/tt-metal/issues/64575": "2026-11-06T01:53:59.828Z",
     "https://github.com/tenstorrent/tt-metal/issues/64647": "2026-11-06T16:27:09.403Z",
-    "https://github.com/jhipster/jhipster-registry/issues/320": "2026-11-11T08:34:36.745Z"
+    "https://github.com/jhipster/jhipster-registry/issues/320": "2026-11-11T08:34:36.745Z",
+    "https://github.com/tenstorrent/tt-metal/issues/65437": "2026-11-13T10:15:20.278Z",
+    "https://github.com/QuantumSavory/QuantumSavory.jl/issues/132": "2026-11-13T10:15:20.277Z"
   },
   "submissions": [
     {
@@ -295,6 +297,17 @@
       "bid": "$750",
       "proposalText": "[keyword-scan] [Bounty $750] Fix remaining sharded scale_mask_softmax mask handling issues",
       "draftedAt": "2026-11-06T16:27:09.403Z",
+      "status": "draft"
+    },
+    {
+      "id": "https://github.com/tenstorrent/tt-metal/issues/65437",
+      "title": "[Bounty $2,000] Restore OpenVLA execution and action correctness",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/65437",
+      "budget": 2000,
+      "score": 8,
+      "bid": "$2000",
+      "proposalText": "[keyword-scan] [Bounty $2,000] Restore OpenVLA execution and action correctness",
+      "draftedAt": "2026-11-13T10:15:20.278Z",
       "status": "draft"
     }
   ]
